@@ -11,13 +11,19 @@ import { AuthenticationService } from './services/authentication.service';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
-
+import { NgxSpinnerModule } from "ngx-spinner";
+import { HomeComponent } from './components/home/home.component';
+import { HomeSliderComponent } from './components/home/home-slider/home-slider.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthenticateComponent,
     NavbarComponent,
+    HomeComponent,
+    HomeSliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,10 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
     RouterModule,
     AngularFontAwesomeModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+    SlideshowModule
   ],
   providers: [AuthenticationService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
