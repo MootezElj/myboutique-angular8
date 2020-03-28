@@ -16,6 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HomeSliderComponent } from './components/home/home-slider/home-slider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {SlideshowModule} from 'ng-simple-slideshow';
+import { ProductListComponent } from './components/product/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {SlideshowModule} from 'ng-simple-slideshow';
     NavbarComponent,
     HomeComponent,
     HomeSliderComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
