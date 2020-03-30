@@ -1,17 +1,17 @@
 import { Injectable, OnInit } from '@angular/core';
-import { Product } from '../models/product/Product';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { tick } from '@angular/core/testing';
+import { Product } from 'src/app/models/product/Product';
+import { Category } from 'src/app/models/product/Category';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService{
  
-  products:Product[];
   product_service_uri = "http://localhost:9101/api/products";
-
+  category_service_uri = "http://localhost:9101/api/categories";
   constructor(private http: HttpClient) { }
 
 
@@ -19,6 +19,14 @@ export class ProductService{
 
   public getProducts():Observable<Product[]> {
     return this.http.get<any>(this.product_service_uri);
+  }
+
+  public getProductHavingCategory(category_name:string):Observable<Product[]> {
+    return this.http.get<any>(this.product_service_uri+"/category/"+category_name);
+  }
+
+  public getCategories():Observable<Category[]> {
+    return this.http.get<any>(this.category_service_uri);
   }
 
   

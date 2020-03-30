@@ -7,9 +7,14 @@ export interface Product extends AbstractEntity{
     description: string,
     price: BigInteger,
     quantity: number,
+    discount:number,
+    priceBeforeDiscount:number,
     status: string,
     salesCounter: number
     reviews?:Review[],
     category:Category;
-    image:string
+    image1:string,
+    image2:string,
+    image3:string,
+    image4:string
 }

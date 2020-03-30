@@ -1,0 +1,30 @@
+
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Departments</a></li>
+        </ol>
+      </nav>
+    <h2>Departments</h2>
+    <div class="row" style="margin-top:3%;" >
+            <div style=" margin-bottom:2vh;" class="col-md-3" *ngFor="let dept of departments">
+              
+                <div style="position: absolute
+            ;top: 45%;
+            left: 17%;
+            font-size: 3vh;
+            color: black;
+            font-weight: bold;
+            font-family: Trebuchet MS;">
+                    {{dept.depName}}
+                </div>
+                <a routerLink="/">
+                <img  style="width: 25vh;height: 25vh; opacity: 0.4;
+                border-top-left-radius: 25%;
+                border-bottom-right-radius: 25%;" src="{{dept.image}}">
+                </a>
+            </div>
+        
+    </div>
+</div>

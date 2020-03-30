@@ -17,6 +17,8 @@ import { HomeSliderComponent } from './components/home/home-slider/home-slider.c
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {SlideshowModule} from 'ng-simple-slideshow';
 import { ProductListComponent } from './components/product/product-list/product-list.component';
+import { ProductService } from './services/product/product.service';
+import { DepartmentListComponent } from './components/product/department/department-list/department-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ProductListComponent } from './components/product/product-list/product-
     NavbarComponent,
     HomeComponent,
     HomeSliderComponent,
-    ProductListComponent
+    ProductListComponent,
+    DepartmentListComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { ProductListComponent } from './components/product/product-list/product-
     SlideshowModule
   ],
   providers: [AuthenticationService,
+    ProductService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]
