@@ -14,9 +14,6 @@ export class ProductService{
   category_service_uri = "http://localhost:9101/api/categories";
   constructor(private http: HttpClient) { }
 
-
-
-
   public getProducts():Observable<Product[]> {
     return this.http.get<any>(this.product_service_uri);
   }
@@ -25,9 +22,6 @@ export class ProductService{
     return this.http.get<any>(this.product_service_uri+"/category/"+category_name);
   }
 
-  public getCategories():Observable<Category[]> {
-    return this.http.get<any>(this.category_service_uri);
-  }
 
   
 }

@@ -13,7 +13,7 @@
             font-family: Trebuchet MS;">
                     {{dept.depName}}
                 </div>
-                <a routerLink="/">
+                <a  [routerLink]="['/products', dept.depName,'all']">
                 <img  style="width: 40vh;height: 40vh; opacity: 0.4;
                 border-top-left-radius: 25%;
                 border-bottom-right-radius: 25%;" src="{{dept.image}}">
