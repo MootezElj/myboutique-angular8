@@ -1,28 +1,34 @@
+
+<div class="all">
+<h4 style="font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-weight: 500;margin-bottom: 4vh;">Departments</h4>
 <ul id="myGroup" *ngFor="let dept of departments">
     <a class="deptItem" data-toggle="collapse" [attr.href]="'#' + dept.id" role="button" aria-expanded="true" aria-controls="collapseExample">
         {{dept.depName}}
     </a>  
   <div  [ngClass]="(dept.depName!=department)?'collapse':'collapse in'" [attr.id]="dept.id">
-    <ul style="font-family:  Optima; color: rgb(141, 141, 141);font-size: 1.8vh;"> 
+    <ul style="font-family:  Optima;font-size: 1.8vh;"> 
         <div (click)="refresh(dept.depName,'all')">All</div>
         <div *ngFor="let cat of categories" class="card card-body">
-        <a (click)="updateDeptCat(dept.depName,cat.name)"  *ngIf="cat.departmentDto.id==dept.id">
+        <a  style=" color: rgb(141, 141, 141);" *ngIf="cat.departmentDto.id==dept.id">
         {{cat.name}}
         </a>
     </div>
 </ul>
 </div>
 </ul>
-
+</div>
 <style>
+
+
     .deptItem{
         font-family: Agency FB;
         text-transform: uppercase;
         font-size: 2vh;
-        color: #3e469f;
+        color: cadetblue;
     }
     .deptItem:hover{
-        color: black;
+        color: darkgreen;
     }
 
 </style>

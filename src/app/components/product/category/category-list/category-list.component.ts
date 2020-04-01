@@ -1,10 +1,10 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/product/category.service';
 import { Category } from 'src/app/models/product/Category';
 import { Department } from 'src/app/models/product/Department';
 import { DepartmentService } from 'src/app/services/product/department.service';
-import { EventEmitter } from 'protractor';
+
 
 @Component({
   selector: 'app-category-list',
@@ -13,14 +13,13 @@ import { EventEmitter } from 'protractor';
 })
 export class CategoryListComponent implements OnInit {
 
+  //@Output() categoryDepartmentUpdated = new EventEmitter();
 
-  
   departments:Department[];
   categories: Category[];
   category:string="";
   department:string="";
  
-
   constructor(private router: Router
     ,private route:ActivatedRoute,private categoryService:CategoryService,private departmentService:DepartmentService) { }
 
@@ -39,9 +38,10 @@ export class CategoryListComponent implements OnInit {
 
   }
 
+  // vote(dept: string, cat:string) {
+  //   this.router.navigate(['/products', dept,cat]);
+  //   this.categoryDepartmentUpdated.emit(true);
+  // }
 
-  updateDeptCat(newCat,newDetp) {  
-    
-} 
-
+  
 }
