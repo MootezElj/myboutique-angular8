@@ -1,7 +1,3 @@
-.all{
-    height: 100%;
-    position: fixed;
-    left: 10vh;
-    bottom: -25vh;
-
+*{
+    width: 100%;
 }

@@ -10,7 +10,7 @@ font-weight: 500;margin-bottom: 4vh;">Departments</h4>
     <ul style="font-family:  Optima;font-size: 1.8vh;"> 
         <div (click)="refresh(dept.depName,'all')">All</div>
         <div *ngFor="let cat of categories" class="card card-body">
-        <a  style=" color: rgb(141, 141, 141);" *ngIf="cat.departmentDto.id==dept.id">
+        <a  style="color: rgb(141, 141, 141); width: fit-content;" *ngIf="cat.departmentDto.id==dept.id">
         {{cat.name}}
         </a>
     </div>
