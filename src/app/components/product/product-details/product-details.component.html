@@ -1,0 +1,64 @@
+<div class="row" style="position: relative;top: -1.3vh;">
+    <div class="col-md-5" style="background-color: black;">
+        <div class="slide">
+            <img width="100%" src="../../../../assets/images/product/product-list/Phones/Iphone_11/pic1.jpg" alt="">
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="container" style="margin-top: 16vh;margin-left: 4vh;
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;">
+            <div class="lev-2-header">{{product.category.name}}</div> <span class="badge"
+                style="background-color: red;padding: 1vh;">- %{{product.discount}}</span>
+            <h1>{{product.name}}</h1>
+            <p class="old-price">${{product.priceBeforeDiscount}}</p>
+            <p class="price">${{product.price}}</p>
+            <p class="product-description">{{product.description}}</p>
+            <form class="form">
+                <select class="select-feature" name="" id="">
+                    <option value="">size: xl</option>
+                    <option value="">size: xxl</option>
+                    <option value="">size: x</option>
+                    <option value="">size: s</option>
+                </select>
+
+
+                <select class="select-feature" name="" id="">
+                    <option value="">color: black</option>
+                    <option value="">color: red</option>
+                    <option value="">color: blue</option>
+                </select>
+
+                <br>
+                <button class="custom-primary-btn">ADD TO CART</button>
+
+            </form>
+            <div class="col-md-8">
+                <div class="review-header">
+                    <h3><i class="fas fa-comment-dots"></i>
+                        Check what others think about this product.
+                    </h3>
+                </div>
+                <div class="review-list col-md-11">
+                    <div class="review-item" *ngFor="let review of reviews">
+                        <div class="block_container">
+                            <div class="bloc1">
+                                {{review.title}}
+                            </div>
+                            <div class="bloc2">
+                                {{review.rating}}
+                            </div>
+                            <div class="bloc3">
+                                /5
+                            </div>
+                        </div>
+                        <p class="review-description">{{review.description}}</p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

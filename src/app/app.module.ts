@@ -22,6 +22,10 @@ import { DepartmentListComponent } from './components/product/department/departm
 import { CategoryService } from './services/product/category.service';
 import { CategoryListComponent } from './components/product/category/category-list/category-list.component';
 import { CommonModule } from '@angular/common';
+import { ProductDetailsComponent } from './components/product/product-details/product-details.component';
+import { HomeDepartmentListComponent } from './components/home/home-department-list/home-department-list.component';
+import { ReviewListComponent } from './components/product/review/review-list/review-list.component';
+import { RegisterComponent } from './components/customer/register/register.component';
 
 
 @NgModule({
@@ -34,6 +38,10 @@ import { CommonModule } from '@angular/common';
     ProductListComponent,
     DepartmentListComponent,
     CategoryListComponent,
+    ProductDetailsComponent,
+    HomeDepartmentListComponent,
+    ReviewListComponent,
+    RegisterComponent,
   
   ],
   imports: [

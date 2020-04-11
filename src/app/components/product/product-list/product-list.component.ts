@@ -11,22 +11,26 @@ import { CategoryService } from 'src/app/services/product/category.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  private selectedOptionForProductList:any;
   products:Product[];
-  categories: Category[];
+  categories: Category[]=new Array();;
   category:string="";
   department:string="";
   constructor(private productService:ProductService, private route:ActivatedRoute,private categoryService:CategoryService) { }
 
   ngOnInit() {
+
+    console.log(this.selectedOptionForProductList);
     this.department=this.route.snapshot.paramMap.get("dept");
     this.category=this.route.snapshot.paramMap.get("cat");
 
-    console.log(this.category+" "+this.department);
+  
     if(this.category.toLocaleLowerCase()!="all"){
       this.categoryService.getCategoryByName(this.category).subscribe(cat=>{
-        this.categories[0]=cat;
+       
+        this.categories.push(cat);
       });
-      console.log(this.category);
+   
       this.productService.getProductHavingCategory(this.category).subscribe(products=>{
         this.products=products;
       });
@@ -45,6 +49,59 @@ export class ProductListComponent implements OnInit {
 
   }
 
+
+  //event handler for the select element's change event
+  updateProductListSelectHandler (event: any) {
+    let  choice = event.target.value;
+    //update the ui
+    switch(choice) { 
+      case 'Top-Rated': {
+        
+         //statements; 
+         break; 
+      } 
+      case 'Highest-price': {
+        
+      this.sortByPrice(this.products);
+         //statements; 
+         break; 
+      } 
+      case 'Lowest-price': { 
+        this.sortByPrice(this.products);
+        this.products.reverse();
+         //statements; 
+         break;  
+     } 
+     case 'Newest': { 
+      //statements; 
+      break; 
+   } 
+      default: { 
+         //statements; 
+         break; 
+      } 
+   }
+    
+
+   
+    this.selectedOptionForProductList = event.target.value;
+  }
+
+
+  sortByPrice(products:Product[]):Product[]{
+    var sortedProducts: Product[] = this.products.sort((p1, p2) => {
+      if (p1.price < p2.price) {
+          return 1;
+      }
+  
+      if (p1.price > p2.price) {
+          return -1;
+      }
+  
+      return 0;
+  });
+  return sortedProducts;
+  }
   // updateDeptCat(update:boolean){
 
   //   if (update)

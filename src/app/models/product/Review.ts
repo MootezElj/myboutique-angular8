@@ -1,10 +1,10 @@
 import { AbstractEntity } from '../commons/AbstractEntity';
+import { Product } from './Product';
 
 export interface Review  extends AbstractEntity{
     name: string,
-    description: string,
-    price: BigInteger,
-    quantity: number,
-    status: string,
-    salesCounter: number
+    title: string,
+    description: BigInteger,
+    rating: number,
+    product: Product
 }

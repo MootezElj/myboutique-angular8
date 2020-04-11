@@ -23,5 +23,10 @@ export class ProductService{
   }
 
 
+  public getProductById(id:number):Observable<Product> {
+    return this.http.get<any>(this.product_service_uri+"/"+id);
+  }
+
+
   
 }
