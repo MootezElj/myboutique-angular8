@@ -26,6 +26,7 @@ import { ProductDetailsComponent } from './components/product/product-details/pr
 import { HomeDepartmentListComponent } from './components/home/home-department-list/home-department-list.component';
 import { ReviewListComponent } from './components/product/review/review-list/review-list.component';
 import { RegisterComponent } from './components/customer/register/register.component';
+import { CustomerService } from './services/customer/customer.service';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { RegisterComponent } from './components/customer/register/register.compo
   providers: [AuthenticationService,
     ProductService,
     CategoryService,
+    CustomerService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]
