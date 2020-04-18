@@ -15,16 +15,11 @@ export class AuthenticationService{
 
   auth_service_uri: string = 'http://localhost:9101';
   
-
   private currentUser: User;
-
-
 
   constructor(private http: HttpClient) {
 
   }
-
- 
   public getCurrentUser():Observable<User> {
     return this.http.get<any>(this.auth_service_uri + '/jwt/currentUser');
   }
@@ -45,7 +40,22 @@ export class AuthenticationService{
       }));
   }
 
-  logout() {
+
+  logout(){
     sessionStorage.removeItem('token');
   }
+
+
+  registerCustomer(user:User) {
+    sessionStorage.removeItem('token');
+    console.log(user);
+    return this.http.post(this.auth_service_uri+"/jwt/register-customer", user);
+  }
+
+
+ isLogedIn(){
+   return sessionStorage.getItem('token')!=null;
+ }
+
+
 }

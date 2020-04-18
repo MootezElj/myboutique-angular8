@@ -67,7 +67,12 @@
             <a> <i class="far fa-heart" style="color: rgb(56, 56, 56);font-size: 150%;"></i></a>
         </li>
           <li >
-            <a routerLink="/login"> <i class="far fa-user" style="color: rgb(56, 56, 56);font-size: 150%;"></i></a>
+            
+              <a *ngIf="!isLoggedIn" routerLink="/login"> <i class="far fa-user" style="color: rgb(56, 56, 56);font-size: 150%;"></i></a>
+           
+            
+              <a class="disconnect-button" *ngIf="isLoggedIn" (click)="disconnect()"><i class="fas fa-sign-out-alt"></i> Sign-out</a>
+            
         </li>
         <li >
               <a> <i class="fas fa-shopping-basket" style="color: rgb(56, 56, 56);font-size: 150%;"></i></a>

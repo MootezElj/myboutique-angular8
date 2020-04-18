@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginModel } from 'src/app/models/loginModel';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { first, map, catchError } from 'rxjs/operators';
 import { User } from 'src/app/models/User';
 
@@ -19,7 +19,7 @@ export class AuthenticateComponent implements OnInit {
     usernameOrEmail:'',
     password:''
   };
-  constructor(private router: Router,private authenticationService:AuthenticationService) { }
+  constructor(private router: Router,private route:ActivatedRoute,private authenticationService:AuthenticationService) { }
 
   ngOnInit() {
   this.authenticationService.getCurrentUser().subscribe(user=>{
@@ -37,11 +37,13 @@ export class AuthenticateComponent implements OnInit {
   login(){
     //console.log(this.authenticationService.login(this.loginModel.usernameOrEmail,this.loginModel.password));
     
+
     this.authenticationService.login(this.loginModel.usernameOrEmail, this.loginModel.password)
     .pipe(first())
     .subscribe(
         data => { 
-            this.router.navigate(['']);
+            this.router.navigateByUrl("/?isLogged=true");
+
         },
         error => {
         });

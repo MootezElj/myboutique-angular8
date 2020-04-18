@@ -22,5 +22,8 @@ export class CustomerService {
     console.log(customer);
     return this.http.post(this.customer_service_uri, customer);
   }
+
+
+
   
 }
