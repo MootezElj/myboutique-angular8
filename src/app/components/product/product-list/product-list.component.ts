@@ -4,6 +4,7 @@ import { Product } from 'src/app/models/product/Product';
 import { Category } from 'src/app/models/product/Category';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from 'src/app/services/product/category.service';
+import { CartService } from 'src/app/services/customer/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -16,7 +17,7 @@ export class ProductListComponent implements OnInit {
   categories: Category[]=new Array();;
   category:string="";
   department:string="";
-  constructor(private productService:ProductService, private route:ActivatedRoute,private categoryService:CategoryService) { }
+  constructor(private cartService:CartService, private productService:ProductService, private route:ActivatedRoute,private categoryService:CategoryService) { }
 
   ngOnInit() {
 
@@ -109,7 +110,18 @@ export class ProductListComponent implements OnInit {
 
   // }
   
+  addProductToCart(productId:number){
+    if (localStorage.getItem("CartToken")==null){
+      this.cartService.createAnonymCart().subscribe(res=>{
+        localStorage.setItem("CartToken",res);
+        this.cartService.addProductToCart(productId).subscribe()});
+    }
+    else {
+      this.cartService.addProductToCart(productId).subscribe();
+    }
 
+    
+  }
   
 
 

@@ -27,6 +27,10 @@ import { HomeDepartmentListComponent } from './components/home/home-department-l
 import { ReviewListComponent } from './components/product/review/review-list/review-list.component';
 import { RegisterComponent } from './components/customer/register/register.component';
 import { CustomerService } from './services/customer/customer.service';
+import { CartComponent } from './components/customer/cart/cart.component';
+import { CartDetailsComponent } from './components/customer/cart-details/cart-details.component';
+import { CartService } from './services/customer/cart.service';
+import { OrderItemService } from './services/order/order-item.service';
 
 
 @NgModule({
@@ -43,6 +47,8 @@ import { CustomerService } from './services/customer/customer.service';
     HomeDepartmentListComponent,
     ReviewListComponent,
     RegisterComponent,
+    CartComponent,
+    CartDetailsComponent,
   
   ],
   imports: [
@@ -61,6 +67,8 @@ import { CustomerService } from './services/customer/customer.service';
     ProductService,
     CategoryService,
     CustomerService,
+    CartService,
+    OrderItemService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]

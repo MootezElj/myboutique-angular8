@@ -24,10 +24,8 @@ export class AuthenticateComponent implements OnInit {
   ngOnInit() {
   this.authenticationService.getCurrentUser().subscribe(user=>{
     this.isLoggedIn=true;
-    console.log("Info: Loged in as :"+user.username)
   },error=>{
     this.isLoggedIn=false;
-    console.log("Info: Not Loged in !")
   });
   
   
@@ -35,9 +33,8 @@ export class AuthenticateComponent implements OnInit {
   }
 
   login(){
-    //console.log(this.authenticationService.login(this.loginModel.usernameOrEmail,this.loginModel.password));
-    
 
+    
     this.authenticationService.login(this.loginModel.usernameOrEmail, this.loginModel.password)
     .pipe(first())
     .subscribe(
