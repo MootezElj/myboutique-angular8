@@ -9,10 +9,10 @@
     <div class="col-md-6">
         <div class="container" style="margin-top: 16vh;margin-left: 4vh;
          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;">
-            <div class="lev-2-header">{{product.category.name}}</div> <span class="badge"
+            <div class="lev-2-header">{{product.category.name}}</div> <span *ngIf="product.discount>0" class="badge"
                 style="background-color: red;padding: 1vh;">- %{{product.discount}}</span>
             <h1>{{product.name}}</h1>
-            <p class="old-price">${{product.priceBeforeDiscount}}</p>
+            <p class="old-price" *ngIf="product.discount>0">${{product.priceBeforeDiscount}}</p>
             <p class="price">${{product.price}}</p>
             <p class="product-description">{{product.description}}</p>
             <form class="form">

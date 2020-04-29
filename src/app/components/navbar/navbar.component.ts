@@ -5,6 +5,8 @@ import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { Category } from 'src/app/models/product/Category';
 import { Department } from 'src/app/models/product/Department';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { CartService } from 'src/app/services/customer/cart.service';
+import { OrderItemService } from 'src/app/services/order/order-item.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,8 +16,11 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class NavbarComponent implements OnInit {
   departments:Department[];
   categories: Category[];
+  cartNbItems: number;
   isLoggedIn:boolean = this.authencitaionSerice.isLogedIn();
-  constructor(private router: Router
+  constructor(private cartService:CartService,
+    private orderItemService:OrderItemService,
+    private router: Router
     ,private route:ActivatedRoute,private categoryService:CategoryService,private departmentService:DepartmentService
     , private authencitaionSerice:AuthenticationService) { }
 
@@ -24,6 +29,11 @@ export class NavbarComponent implements OnInit {
     if (!this.isLoggedIn){
       this.route.queryParams.subscribe(params => {
         this.isLoggedIn = params['isLogged']== "true";
+        this.cartService.getCurrentAnonymCart().subscribe(cart=>{
+          this.orderItemService.getOrderItemsByOrderId(cart.orderId).subscribe(items=>{
+              this.cartNbItems=items.length;
+          })
+        })
     });
     }
 

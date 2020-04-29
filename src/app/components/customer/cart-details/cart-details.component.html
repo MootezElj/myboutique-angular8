@@ -16,7 +16,7 @@
                     <h4>QTY {{item.quantity}}</h4>
                 </div>
                 <div class="col-md-4 product-price">
-                    <h3>${{item.product.price}}</h3>
+                    <h3>${{item.product.price*item.quantity}}</h3>
                     <p>Free shipping</p>
                     <button (click)="removeItem(item.id)" class="remove-item-btn">-</button>
                 </div>

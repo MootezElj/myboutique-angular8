@@ -28,7 +28,7 @@ export class CartDetailsComponent implements OnInit {
             item.product=product;
             this.orderItems.push(item);
             console.log("fasf2 "+product.price.toString())
-            this.totalPrice=this.totalPrice+Number.parseFloat(product.price.toString());
+            this.totalPrice=this.totalPrice+(Number.parseFloat(product.price.toString())*item.quantity);
           })
         });
       })

@@ -49,9 +49,7 @@ background-repeat: no-repeat;background-size: cover;" class="">
                                     </a>
                                     <ul class="social">
                                         <li><a [routerLink]="['/product/Details', product.id]" href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a>
-                                        </li>
-                                        <li><a (click)="addProductToCart(product.id)" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
+                                        <li *ngIf="product.status=='AVAILABLE'"><a (click)="addProductToCart(product.id)" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
                                         </li>
                                     </ul>
                                     <span class="product-new-label"
@@ -67,12 +65,21 @@ background-repeat: no-repeat;background-size: cover;" class="">
                                     <li class="fa fa-star"></li>
                                     <li class="fa fa-star disable"></li>
                                 </ul>
-                                <div class="product-content">
+                                <div class="product-content" >
                                     <h3 class="title"><a href="#">{{product.name}}</a></h3>
                                     <div class="price">${{product.price}}
-                                        <span>${{product.priceBeforeDiscount}}</span>
+                                    
+                                            <span *ngIf="product.discount>0">${{product.priceBeforeDiscount}}</span>
+                                  
+                                       
                                     </div>
-                                    <a class="add-to-cart" href="">+ Add To Cart</a>
+                                    <div *ngIf="product.status=='AVAILABLE'">
+                                        <button (click)="addProductToCart(product.id)" class="add-to-cart" >+ Add To Cart</button>
+                                    </div>
+                                    <div *ngIf="product.status=='DISCONTINUED'">
+                                        <button disabled (click)="addProductToCart(product.id)" class="add-to-cart" >Product discounted</button>
+                                    </div>
+                                   
                                 </div>
 
                             </div>
@@ -316,8 +323,10 @@ background-repeat: no-repeat;background-size: cover;" class="">
 
     .product-grid .add-to-cart {
         color: #000;
-        font-size: 13px;
-        font-weight: 600
+        font-size: 12px;
+        font-weight: 600;
+        border: none;
+        background-color: white;
     }
 
     @media only screen and (max-width:990px) {
