@@ -11,7 +11,7 @@
          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;">
             <div class="lev-2-header">{{product.category.name}}</div> <span *ngIf="product.discount>0" class="badge"
                 style="background-color: red;padding: 1vh;">- %{{product.discount}}</span>
-            <h1>{{product.name}}</h1>
+           <h1>{{product.name}}</h1>
             <p class="old-price" *ngIf="product.discount>0">${{product.priceBeforeDiscount}}</p>
             <p class="price">${{product.price}}</p>
             <p class="product-description">{{product.description}}</p>

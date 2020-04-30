@@ -36,6 +36,15 @@ export class NavbarComponent implements OnInit {
         })
     });
     }
+    else {
+      this.authencitaionSerice.getCurrentUser().subscribe(current_user=>{
+        this.cartService.getCartByCustomerUsername(current_user.username).subscribe(cart=>{
+          this.orderItemService.getOrderItemsByOrderId(cart.orderId).subscribe(items=>{
+              this.cartNbItems=items.length;
+          })
+        })
+      })
+    }
 
 
     this.categoryService.getCategories().subscribe(categories=>{

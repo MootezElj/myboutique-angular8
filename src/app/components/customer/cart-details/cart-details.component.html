@@ -8,7 +8,7 @@
                 <img src="../../../../assets/images/product/product-list/{{item.product.category.name}}/{{item.product.name.split(' ').join('_')}}/{{item.product.image1}}"
                     class="product-image col-md-3" />
                 <div class="col-md-3">
-                    <h4 style="width: 100%;">{{item.product.name}}</h4>
+                   <a [routerLink]="['/product/Details', item.product.id]"> <h4 style="width: 100%;">{{item.product.name}}</h4> </a> 
                     <p class="product-status">{{item.product.status}}</p>
                     <p>{{item.product.salesCounter}} Available</p>
                 </div>

@@ -19,11 +19,25 @@ export class CartService {
     );
   }
 
-  public addProductToCart(productId) {
+  public createCartForCustomer(customerUsername:string){
+    return this.http.post<Cart>(this.cart_service_uri + "/customer/" + customerUsername, null);
+  }
+
+  public assignAnonymCartToCustomer(customerUsername:string):Observable<Cart>{
+    return this.http.put<Cart>(this.cart_service_uri + "/AssignAnonymCartToCustomer/" + customerUsername, null, {
+      headers: new HttpHeaders().set('CartToken', localStorage.getItem("CartToken"))
+    });
+  }
+  //Anonym Cart
+  public addProductToAnonymCart(productId:number) {
     return this.http.put(this.cart_service_uri + "/AddProduct/" + productId, null, {
       headers: new HttpHeaders().set('CartToken', localStorage.getItem("CartToken")),
       responseType: 'text'
     });
+  }
+
+  public addProductToCart(cartId:number,productId:number) {
+    return this.http.put(this.cart_service_uri + "/AddProduct/" + cartId+"/"+productId, null);
   }
 
   public getCurrentAnonymCart():Observable<Cart>{
@@ -31,6 +45,10 @@ export class CartService {
       headers: new HttpHeaders().set('CartToken', localStorage.getItem("CartToken"))
       
     });
+  }
+
+  public getCartByCustomerUsername(username:string):Observable<Cart>{
+    return this.http.get<Cart>(this.cart_service_uri + "/customer?username="+username);
   }
 
 

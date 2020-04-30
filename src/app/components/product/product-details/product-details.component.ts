@@ -49,10 +49,10 @@ export class ProductDetailsComponent implements OnInit {
         if (localStorage.getItem("CartToken")==null){
           this.cartService.createAnonymCart().subscribe(res=>{
             localStorage.setItem("CartToken",res);
-            this.cartService.addProductToCart(productId).subscribe()});
+            this.cartService.addProductToAnonymCart(productId).subscribe()});
         }
         else {
-          this.cartService.addProductToCart(productId).subscribe();
+          this.cartService.addProductToAnonymCart(productId).subscribe();
         }
         Swal.fire(
           'Success !',

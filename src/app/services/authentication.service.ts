@@ -14,8 +14,8 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 export class AuthenticationService{
 
   auth_service_uri: string = 'http://localhost:9101';
-  
-  private currentUser: User;
+
+  public static currentUser: User;
 
   constructor(private http: HttpClient) {
 
