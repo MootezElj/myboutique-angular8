@@ -1,0 +1,49 @@
+<div class="container">
+    <h2>Shopping cart <i class="fas fa-shopping-cart"></i></h2>
+    <div class="row" >
+
+        <div class="col-md-8" >
+            <div class="cart-product col-md-12" *ngFor="let item of orderItems">
+                <h3>"{{item.product.category.name}}" Category</h3>
+                <img src="../../../../assets/images/product/product-list/{{item.product.category.name}}/{{item.product.name.split(' ').join('_')}}/{{item.product.image1}}"
+                    class="product-image col-md-3" />
+                <div class="col-md-3">
+                    <h4 style="width: 100%;">{{item.product.name}}</h4>
+                    <p class="product-status">{{item.product.status}}</p>
+                    <p>{{item.product.salesCounter}} Available</p>
+                </div>
+                <div class="col-md-2">
+                    <h4>QTY {{item.quantity}}</h4>
+                </div>
+                <div class="col-md-4 product-price">
+                    <h3>${{item.product.price*item.quantity}}</h3>
+                    <p>Free shipping</p>
+                    <button (click)="removeItem(item.id)" class="remove-item-btn">-</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-4 checkout-menu">
+            <div class="col-md-12">
+                <h5 class="col-md-6">Product(s): {{orderItems.length}}</h5>
+                <h5 class="col-md-6 checkout-right-align">US ${{totalPrice}}</h5>
+            </div>
+
+            <div class="col-md-12">
+                <h5 class="col-md-6">Shipment: </h5>
+                <h5 class="col-md-6 checkout-right-align">Free</h5>
+            </div>
+
+            <div class="col-md-12 empty-border">
+                <h3 class="col-md-6">Total</h3>
+                <h4 class="col-md-6 checkout-right-align">${{totalPrice}} </h4>
+            </div>
+
+            <div class="col-md-12">
+                <button class="checkout-button">Checkout</button>
+            </div>
+        </div>
+       
+    </div>
+</div>

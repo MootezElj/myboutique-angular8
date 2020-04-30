@@ -4,7 +4,11 @@ import { Product } from 'src/app/models/product/Product';
 import { Category } from 'src/app/models/product/Category';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from 'src/app/services/product/category.service';
-
+import { CartService } from 'src/app/services/customer/cart.service';
+import sweetalert2 from 'sweetalert2'
+ 
+// CommonJS
+const Swal = require('sweetalert2');
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -16,7 +20,7 @@ export class ProductListComponent implements OnInit {
   categories: Category[]=new Array();;
   category:string="";
   department:string="";
-  constructor(private productService:ProductService, private route:ActivatedRoute,private categoryService:CategoryService) { }
+  constructor(private cartService:CartService, private productService:ProductService, private route:ActivatedRoute,private categoryService:CategoryService) { }
 
   ngOnInit() {
 
@@ -109,7 +113,51 @@ export class ProductListComponent implements OnInit {
 
   // }
   
+  addProductToCart(productId:number){
 
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'Do you confirm adding this product to your cart !',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Confirm',
+      cancelButtonText: 'Cancel'
+    }).then((result) => {
+      if (result.value) {
+        //if agree
+        if (localStorage.getItem("CartToken")==null){
+          this.cartService.createAnonymCart().subscribe(res=>{
+            localStorage.setItem("CartToken",res);
+            this.cartService.addProductToCart(productId).subscribe()});
+        }
+        else {
+          this.cartService.addProductToCart(productId).subscribe();
+        }
+        Swal.fire(
+          'Success !',
+          'Product successfuly added to cart',
+          'success'
+        )
+      // For more information about handling dismissals please visit
+      // https://sweetalert2.github.io/#handling-dismissals
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'Request canceled :)',
+          'Canceled'
+        )
+      }
+    })
+
+    
+
+
+
+
+   
+
+    
+  }
   
 
 

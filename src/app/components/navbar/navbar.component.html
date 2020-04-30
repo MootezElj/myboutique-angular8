@@ -10,7 +10,6 @@
         </button>
         <a class="navbar-brand" href="#" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         color: black;font-size: 24px;">
-        
         <i style="color: rgb(0, 0, 153);font-size: 120%;margin-right: 1vh" class="fas fa-shopping-basket"></i>My-Boutique</a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -75,7 +74,8 @@
             
         </li>
         <li >
-              <a> <i class="fas fa-shopping-basket" style="color: rgb(56, 56, 56);font-size: 150%;"></i></a>
+              <a routerLink="/cart-details"> <i class="fas fa-shopping-basket" style="color: rgb(56, 56, 56);font-size: 150%;"></i><span class="badge cart-badge">{{cartNbItems}}</span></a>
+              
         </li>
       
 

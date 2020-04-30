@@ -23,7 +23,5 @@ export class CustomerService {
     return this.http.post(this.customer_service_uri, customer);
   }
 
-
-
   
 }
