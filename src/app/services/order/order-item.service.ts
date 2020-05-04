@@ -14,14 +14,12 @@ export class OrderItemService {
 
 
   public getOrderItemsByOrderId(orderId:number):Observable<OrderItem[]>{
-    return this.http.get<OrderItem[]>(this.orderItem_service_uri+"/order/"+orderId, {
-      headers: new HttpHeaders().set('CartToken', localStorage.getItem("CartToken"))
-    }
+    return this.http.get<OrderItem[]>(this.orderItem_service_uri+"/order/"+orderId
     );
   }
 
-  public removeOrderItemById(orderId:number){
 
+  public removeOrderItemById(orderId:number){
     return this.http.delete(this.orderItem_service_uri+"/"+orderId  );
   }
 
