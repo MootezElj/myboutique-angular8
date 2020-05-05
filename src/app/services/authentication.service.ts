@@ -33,26 +33,26 @@ export class AuthenticationService{
         let token = JSON.stringify(response.headers.get('Authorization')).substring(1);
         token = token.substring(0, token.length - 1);
         // store user details and jwt token in local storage to keep user logged in between page refreshes
-        sessionStorage.setItem('token', token);
+        localStorage.setItem('UserToken', token);
         return response;
       }));
   }
 
 
   logout(){
-    sessionStorage.removeItem('token');
+    localStorage.removeItem('UserToken');
   }
 
 
   registerCustomer(user:User) {
-    sessionStorage.removeItem('token');
+    localStorage.removeItem('UserToken');
     console.log(user);
     return this.http.post(this.auth_service_uri+"/jwt/register-customer", user);
   }
 
 
  isLogedIn(){
-   return sessionStorage.getItem('token')!=null;
+   return localStorage.getItem('UserToken')!=null;
  }
 
 

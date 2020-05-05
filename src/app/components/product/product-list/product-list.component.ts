@@ -132,7 +132,7 @@ export class ProductListComponent implements OnInit {
       //if agree
       if (result.value) {
         //If user is not loged in
-        if (sessionStorage.getItem('token') == null) {
+        if (localStorage.getItem('UserToken') == null) {
           //If we don't have a cart
           if ((localStorage.getItem("CartToken") == null)) {
             this.cartService.createAnonymCart().subscribe(res => {
