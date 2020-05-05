@@ -45,8 +45,6 @@ export class NavbarComponent implements OnInit {
         })
       })
     }
-
-
     this.categoryService.getCategories().subscribe(categories=>{
       console.log(categories);
         this.categories=categories;

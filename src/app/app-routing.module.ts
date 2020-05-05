@@ -9,6 +9,7 @@ import { HomeDepartmentListComponent } from './components/home/home-department-l
 import { RegisterComponent } from './components/customer/register/register.component';
 import { CartComponent } from './components/customer/cart/cart.component';
 import { CartDetailsComponent } from './components/customer/cart-details/cart-details.component';
+import { CheckoutComponent } from './components/order/checkout/checkout.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'product/Details/:product', component: ProductDetailsComponent},
   {path: 'cart', component: CartComponent},
   {path: 'cart-details', component: CartDetailsComponent},
+  {path: 'checkout/:orderId', component: CheckoutComponent},
   {path: '', component: HomeComponent},
 ];
 

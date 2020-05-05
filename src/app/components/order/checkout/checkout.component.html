@@ -1,0 +1,100 @@
+<div class="row">
+    <div class="col-md-12">
+        <img class="header-image" src="https://cdn.pixabay.com/photo/2014/02/07/10/19/winter-260817_960_720.jpg">
+        <!--  -->
+        <h1 class="register-header-title">
+            Order
+        </h1>
+    </div>
+    <div class="container">
+        <div class="col-md-6">
+            <h4 style="font-weight: bold;color: black;margin-bottom: 5%;">Shipment information</h4>
+            <form class="form">
+                <div class="form-group col-md-7">
+                    <label>Country: * </label>
+                    <select name="country" [(ngModel)]="address.country" class="custom-style1-select">
+                        <option style="height: 5vh;" *ngFor="let country of countries" [value]="country.name"
+                            [attr.selected]="country.name">
+                            {{country.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Address 1: * </label>
+                    <input [(ngModel)]="address.address1" name="address1" class="form-control custom-input">
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Address 2: * </label>
+                    <input type="text" [(ngModel)]="address.address2" name="address2" class="form-control custom-input">
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label>City: * </label>
+                    <input type="text" [(ngModel)]="address.city" name="city" class="form-control custom-input">
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label>Postcode: * </label>
+                    <input type="text" [(ngModel)]="address.postcode" name="postcode" class="form-control custom-input">
+                </div>
+
+                <div class="col-md-12" style="margin-bottom: 1%;">
+                    <input type="checkbox"> I accept the <a href="#">terms and conditions</a>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <button class="btn btn-success" (click)="addAddress()">Confirm</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-12" class="payment-methods">
+                <h4 style="font-weight: bold;color: black;margin-bottom: 5%;">Payment information</h4>
+                <div class="col-md-12 payment-method">
+                    <input type="radio" name="payment-method" class="col-md-1 payment-method-radio">
+                    <img class="col-md-3 payment-method-img" width="10%"
+                        src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_960_720.png">
+                    <div class="col-md-8 payment-description">
+                        <h3>Paypal</h3>
+
+                        Pay us via paypal.
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 payment-method">
+                    <input type="radio" name="payment-method" class="col-md-1 payment-method-radio">
+                    <img class="col-md-3 payment-method-img" width="10%"
+                        src=" https://www.mastercard.us/content/dam/mccom/et-ee/logos/logo-mastercard-mobile.svg">
+                    <div class="col-md-8">
+                        <h3>Mastercard</h3>
+
+                        Pay us with your Mastercard.
+                    </div>
+                </div>
+
+                <div class="col-md-12 payment-method">
+                    <input type="radio" name="payment-method" class="col-md-1 payment-method-radio">
+                    <img class="col-md-3 payment-method-img" width="10%"
+                        src="https://sahaab.com/wp-content/uploads/2020/01/PngItem_222332.png">
+                    <div class="col-md-8">
+                        <h3>On delivery</h3>
+                        Pay us when you receive your item.
+                    </div>
+                </div>
+                <div class="col-md-12 payment-method">
+                    <input type="radio" name="payment-method" class="col-md-1 payment-method-radio">
+                    <img class="col-md-3 payment-method-img" width="10%"
+                        src="https://www.newcasinosonline.com/wp-content/uploads/banktransfer-logo-300-200.png">
+                    <div class="col-md-8">
+                        <h3>Bank transfer</h3>
+                        Pay us with a bank transfer.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

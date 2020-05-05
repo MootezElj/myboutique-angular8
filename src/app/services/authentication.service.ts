@@ -15,8 +15,6 @@ export class AuthenticationService{
 
   auth_service_uri: string = 'http://localhost:9101';
 
-  public static currentUser: User;
-
   constructor(private http: HttpClient) {
 
   }

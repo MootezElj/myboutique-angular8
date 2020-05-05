@@ -31,6 +31,7 @@ import { CartComponent } from './components/customer/cart/cart.component';
 import { CartDetailsComponent } from './components/customer/cart-details/cart-details.component';
 import { CartService } from './services/customer/cart.service';
 import { OrderItemService } from './services/order/order-item.service';
+import { CheckoutComponent } from './components/order/checkout/checkout.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { OrderItemService } from './services/order/order-item.service';
     RegisterComponent,
     CartComponent,
     CartDetailsComponent,
+    CheckoutComponent,
   
   ],
   imports: [

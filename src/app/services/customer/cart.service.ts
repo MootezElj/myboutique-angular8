@@ -43,7 +43,6 @@ export class CartService {
   public getCurrentAnonymCart():Observable<Cart>{
     return this.http.get<Cart>(this.cart_service_uri + "/Anonym",   {
       headers: new HttpHeaders().set('CartToken', localStorage.getItem("CartToken"))
-      
     });
   }
 
