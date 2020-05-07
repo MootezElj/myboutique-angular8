@@ -37,8 +37,8 @@
             </form>
             <div class="col-md-8">
                 <div class="review-header">
-                    <h3><i class="fas fa-comment-dots"></i>
-                        Check what others think about this product.
+                    <h3><i class="fas fa-comments"></i>
+                        Check others's feedback on this product.
                     </h3>
                 </div>
                 <div class="review-list col-md-11">
@@ -56,7 +56,30 @@
                         </div>
                         <p class="review-description">{{review.description}}</p>
                     </div>
+                    <div class="review-header">
+                        <h3><i class="fas fa-comment-dots"></i>
+                            What about you ?
+                        </h3>
+                    </div>
+                    <div class="review-form row">
+                        <form style="width: 90%;" class="">
+                            <div class="form-group col-md-6">
+                                <input [(ngModel)]="review.title" name="title" type="text" placeholder="Review title" class="form-control">
+                            </div>
 
+                            <div class="slidecontainer col-md-4">
+                                <input [(ngModel)]="review.rating" name="rating" type="range" min="0.5" max="5" step="0.5"  class="slider" id="myRange">
+                                <div style="color: teal;">rating: {{review.rating}}</div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <textarea placeholder="Review description" name="description"  [(ngModel)]="review.description"  class="form-control"></textarea>
+                            </div>
+
+                       
+                            
+                            <button (click)="addReview()" class="review-btn col-md-3"><i class="fas fa-check"></i> Confirm</button>
+                        </form>
+                    </div>
 
                 </div>
             </div>

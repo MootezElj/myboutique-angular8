@@ -16,5 +16,9 @@ export class ReviewService {
   public getReviewHavingProductId(productId:number):Observable<Review[]> {
     return this.http.get<any>(this.review_service_uri+"/ofProduct/"+productId);
   }
+
+  public addReview(review:Review):Observable<Review> {
+    return this.http.post<Review>(this.review_service_uri,review);
+  }
   
 }

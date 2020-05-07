@@ -15,6 +15,13 @@ const Swal = require('sweetalert2');
 export class ProductDetailsComponent implements OnInit {
 
   private product:Product;
+  private review:Review = {
+    description:'',
+    title:'',
+    name:'',
+    product:null,
+    rating:0
+  };
   private productId:number;
   private reviews:Review[];
   constructor(private cartService:CartService,
@@ -69,5 +76,14 @@ export class ProductDetailsComponent implements OnInit {
         )
       }
     })
+  }
+
+  addReview(){
+    this.review.product = this.product;
+    console.log(this.review)
+    this.reviewService.addReview(this.review).subscribe(review=>{
+      console.log("success Id:"+review.id);
+    })
+    location.reload();
   }
 }

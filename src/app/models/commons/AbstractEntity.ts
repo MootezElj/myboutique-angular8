@@ -1,5 +1,5 @@
 export interface AbstractEntity{
-	id:number;
-	createDate:Date;
-	lastModified:Date;
+	id?:number;
+	createDate?:Date;
+	lastModified?:Date;
 }

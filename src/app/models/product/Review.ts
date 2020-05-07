@@ -4,7 +4,7 @@ import { Product } from './Product';
 export interface Review  extends AbstractEntity{
     name: string,
     title: string,
-    description: BigInteger,
+    description: string,
     rating: number,
     product: Product
 }
