@@ -11,7 +11,7 @@ import { OrderService } from 'src/app/services/order/order.service';
 import  *  as  countries  from  './../../../../assets/resources/json/countries.json';
 import { Country } from 'src/app/models/order/Country';
 import { Address } from 'src/app/models/order/Address';
-
+const Swal = require('sweetalert2');
 
 @Component({
   selector: 'app-checkout',
@@ -20,8 +20,8 @@ import { Address } from 'src/app/models/order/Address';
 })
 export class CheckoutComponent implements OnInit {
 
-  orderItems:OrderItem[];
-  totalPrice:number;
+  private orderItems:OrderItem[]=[];
+  totalPrice:number=0;
   current_user:User;
   order : Order;
   address:Address = {
@@ -46,13 +46,20 @@ export class CheckoutComponent implements OnInit {
   ngOnInit() {
       this.authenticationService.getCurrentUser().subscribe(current_user=>{
       let orderId = Number.parseFloat(this.route.snapshot.paramMap.get("orderId"));
-      this.orderItemService.getOrderItemsByOrderId(orderId).subscribe(orderItems=>{
-        this.orderItems=orderItems;
-      })
+
       this.current_user=current_user;
       this.orderService.getOrderById(orderId).subscribe(order=>{
       this.countries=countries["default"]
-      this.order=order; 
+      this.order=order;
+      this.orderItemService.getOrderItemsByOrderId(order.id).subscribe(orderItems=>{
+        orderItems.forEach(item => {
+          this.productService.getProductById(item.productId).subscribe(product=>{
+            item.product=product;
+            this.orderItems.push(item);
+            this.totalPrice=this.totalPrice+(Number.parseFloat(product.price.toString())*item.quantity);
+          })
+        });
+      })
       })
       },(error=>{
       alert("You must login before checkout.");
@@ -62,10 +69,46 @@ export class CheckoutComponent implements OnInit {
     
 
     addAddress(){
-      console.log(this.address);
-      this.orderService.updateOrderAddress(this.order.id,this.address).subscribe(order=>{
-        console.log(order);
-      })
+
+
+      
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'Do you confirm your order with those credentials !',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Confirm',
+      cancelButtonText: 'Cancel'
+    }).then((result) => {
+      //if agree
+      if (result.value) {
+        console.log(this.address);
+        this.orderService.updateOrderAddress(this.order.id,this.address).subscribe(order=>{
+          console.log(order);
+        })
+
+        Swal.fire(
+          'Success !',
+          'Order successfuly added ! One of our admin will review it and confirm it as soon as possible.',
+          'success'
+        )
+        this.router.navigate(['/']);
+        
+        // For more information about handling dismissals please visit
+        // https://sweetalert2.github.io/#handling-dismissals
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'Request canceled :)',
+          'Canceled'
+        )
+      }
+    })
+
+
+
+
+    
     }
  
   

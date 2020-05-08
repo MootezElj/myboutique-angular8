@@ -104,7 +104,8 @@ font-family: 'Times New Roman', Times, serif;
     display:inline;
     font-size: 1.7vh;
     position: relative;
-    top: 4%;
+    top: -1.5vh;
+    color: teal;
 }
 .block_container
 {
