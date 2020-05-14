@@ -22,6 +22,10 @@ export class ProductService{
     return this.http.get<any>(this.product_service_uri+"/category/"+category_name);
   }
 
+  public getTrendingProductsForDepartment(dep_name:string):Observable<Product[]> {
+    return this.http.get<any>(this.product_service_uri+"/trending/department/"+dep_name);
+  }
+
 
   public getProductById(id:number):Observable<Product> {
     return this.http.get<any>(this.product_service_uri+"/"+id);

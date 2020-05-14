@@ -42,7 +42,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   addProductToCart(productId:number){
-
+    console.log("adca "+productId)
     Swal.fire({
       title: 'Are you sure?',
       text: 'Do you confirm adding this product to your cart !',

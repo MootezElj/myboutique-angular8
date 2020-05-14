@@ -1,8 +1,8 @@
-<div class="container">
+<div class="main-container">
 
     <div class="block_container">   
         <div class="bloc1">
-            <i class="fas fa-fire" style="color: #ffcba8;"></i> Popular departments
+            <i class="fas fa-poll" style="color: #b9b4ff;"></i> Popular departments
         </div>
         <div class="bloc2">
             <a [routerLink]="['/departments']" routerLinkActive="router-link-active"  style="color: gray;margin-right: 1vh;">See all</a>
@@ -20,8 +20,8 @@
                 
                 <a  [routerLink]="['/products', dept.depName,'all']">
                 <img width="100%"  style="
-                height: 11vh;
-                border-radius: 45%;" src="{{dept.image}}">
+                height: 14vh;
+                border-radius: 10px" src="{{dept.image}}">
                 <div style="position: relative;left: 6vh;margin-top: 1vh;">
                     {{dept.depName}}
                 </div>
@@ -53,6 +53,7 @@
     color: #525252;
     
 }
+
 
 
 </style>

@@ -32,6 +32,7 @@ import { CartDetailsComponent } from './components/customer/cart-details/cart-de
 import { CartService } from './services/customer/cart.service';
 import { OrderItemService } from './services/order/order-item.service';
 import { CheckoutComponent } from './components/order/checkout/checkout.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { CheckoutComponent } from './components/order/checkout/checkout.componen
     CartComponent,
     CartDetailsComponent,
     CheckoutComponent,
+    FooterComponent,
   
   ],
   imports: [
