@@ -13,9 +13,7 @@ background-repeat: no-repeat;background-size: cover;" class="">
         <app-category-list></app-category-list>
       </div>
       <div class="col-md-9">
-        <div class="col-md-6">
-          8 Products found !!
-        </div>
+       
 
         <div class="col-md-6" style="margin-left: 60vh;">
           <form class="form">
@@ -23,8 +21,6 @@ background-repeat: no-repeat;background-size: cover;" class="">
               <label class="col-md-4" for="sortId" style="margin-right: -7vh;margin-top: 0.4vh;">Sort By</label>
               <select (change)="updateProductListSelectHandler($event)" id="sortId" class="form-control "
                 style="width: 40%;">
-                <option value="Top-Rated">Top Rated</option>
-                <option value="Newest">Newest</option>
                 <option value="Highest-price">Price: $$$ - $</option>
                 <option value="Lowest-price">Price: $ - $$$</option>
               </select>
@@ -34,8 +30,11 @@ background-repeat: no-repeat;background-size: cover;" class="">
         <div *ngFor="let category of categories">
 
           <h3 class="col-md-12" style="margin-left:40% ;
-                font-family: fantasy;
-                font-size: 2.5vh;"> {{category.name}} </h3>
+          color: #949494;
+                margin-bottom: 2%;
+                margin-top: 2%;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 3vh;"> {{category.name}} </h3>
 
           <div *ngFor="let product of products">
             <div *ngIf="product.category.name==category.name">
@@ -50,10 +49,21 @@ background-repeat: no-repeat;background-size: cover;" class="">
                       src="../../../../assets/images/product/product-list/{{product.image2}}">
                     </a>
                     <ul class="social">
+                      
                       <li><a [routerLink]="['/product/Details', product.id]" href="" data-tip="Quick View"><i
                             class="fa fa-search"></i></a></li>
                       <li *ngIf="product.status=='AVAILABLE'"><a (click)="addProductToCart(product.id)"
                           data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
+                      </li>
+                      <br>
+                      <li>
+                        <ul class="rating">
+                          <li class="fa fa-star"></li>
+                          <li class="fa fa-star"></li>
+                          <li class="fa fa-star"></li>
+                          <li class="fa fa-star"></li>
+                          <li class="fa fa-star disable"></li>
+                        </ul>
                       </li>
                     </ul>
                     <span class="product-new-label"
@@ -62,13 +72,7 @@ background-repeat: no-repeat;background-size: cover;" class="">
                         [ngStyle]="{'background-color':product.discount > 9 ? '#9e4646' : '#c1c497' }"
                         class="product-discount-label">%{{product.discount}}</span></div>
                   </div>
-                  <ul class="rating">
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star disable"></li>
-                  </ul>
+             
                   <div class="product-content">
                     <h3 class="title"><a href="#">{{product.name}}</a></h3>
                     <div class="price">${{product.price}}
@@ -269,7 +273,7 @@ background-repeat: no-repeat;background-size: cover;" class="">
   }
 
   .product-grid .rating {
-    color: #FFD200;
+    color: rgb(255, 230, 0);
     font-size: 12px;
     padding: 12px 0 0;
     margin: 0;

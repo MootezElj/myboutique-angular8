@@ -3,14 +3,15 @@
 <h4 style="font-family: Verdana, Geneva, Tahoma, sans-serif;
 font-weight: 500;margin-bottom: 4vh;">Departments</h4>
 <ul id="myGroup" *ngFor="let dept of departments">
-    <a class="deptItem" data-toggle="collapse" [attr.href]="'#' + dept.id" role="button" aria-expanded="true" aria-controls="collapseExample">
+    <a  class="deptItem" data-toggle="collapse" [attr.href]="'#' + dept.id" role="button" aria-expanded="true" aria-controls="collapseExample">
         {{dept.depName}}
     </a>  
   <div  [ngClass]="(dept.depName!=department)?'collapse':'collapse in'" [attr.id]="dept.id">
     <ul style="font-family:  Optima;font-size: 1.8vh;"> 
-        <div (click)="refresh(dept.depName,'all')">All</div>
+        <a href="/products/{{dept.depName}}/all">All</a>
         <div *ngFor="let cat of categories" class="card card-body">
-        <a  style="color: rgb(141, 141, 141); width: fit-content;" *ngIf="cat.departmentDto.id==dept.id">
+        <a href="/products/{{dept.depName}}/{{cat.name}}"
+         style="color: rgb(141, 141, 141); width: fit-content;" *ngIf="cat.departmentDto.id==dept.id">
         {{cat.name}}
         </a>
     </div>

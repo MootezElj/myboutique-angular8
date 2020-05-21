@@ -62,8 +62,7 @@ export class CheckoutComponent implements OnInit {
       })
       })
       },(error=>{
-      alert("You must login before checkout.");
-      this.router.navigate(['/login'] );
+      this.router.navigate(['/access-denied'] );
     }))
     }
     

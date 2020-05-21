@@ -24,7 +24,6 @@ import { CategoryListComponent } from './components/product/category/category-li
 import { CommonModule } from '@angular/common';
 import { ProductDetailsComponent } from './components/product/product-details/product-details.component';
 import { HomeDepartmentListComponent } from './components/home/home-department-list/home-department-list.component';
-import { ReviewListComponent } from './components/product/review/review-list/review-list.component';
 import { RegisterComponent } from './components/customer/register/register.component';
 import { CustomerService } from './services/customer/customer.service';
 import { CartComponent } from './components/customer/cart/cart.component';
@@ -33,6 +32,8 @@ import { CartService } from './services/customer/cart.service';
 import { OrderItemService } from './services/order/order-item.service';
 import { CheckoutComponent } from './components/order/checkout/checkout.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NotFoundComponent } from './components/errors/not-found/not-found.component';
+import { AccessDeniedComponent } from './components/errors/access-denied/access-denied.component';
 
 
 @NgModule({
@@ -47,12 +48,13 @@ import { FooterComponent } from './components/footer/footer.component';
     CategoryListComponent,
     ProductDetailsComponent,
     HomeDepartmentListComponent,
-    ReviewListComponent,
     RegisterComponent,
     CartComponent,
     CartDetailsComponent,
     CheckoutComponent,
     FooterComponent,
+    NotFoundComponent,
+    AccessDeniedComponent,
   
   ],
   imports: [

@@ -10,6 +10,8 @@ import { RegisterComponent } from './components/customer/register/register.compo
 import { CartComponent } from './components/customer/cart/cart.component';
 import { CartDetailsComponent } from './components/customer/cart-details/cart-details.component';
 import { CheckoutComponent } from './components/order/checkout/checkout.component';
+import { AccessDeniedComponent } from './components/errors/access-denied/access-denied.component';
+import { NotFoundComponent } from './components/errors/not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,10 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'cart-details', component: CartDetailsComponent},
   {path: 'checkout/:orderId', component: CheckoutComponent},
+  {path: 'access-denied', component: AccessDeniedComponent},
+  {path: '404', component: NotFoundComponent},
   {path: '', component: HomeComponent},
+  {path: '**', redirectTo: '/404'},
 ];
 
 @NgModule({

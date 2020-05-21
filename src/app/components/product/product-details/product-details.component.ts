@@ -5,6 +5,8 @@ import { ProductService } from 'src/app/services/product/product.service';
 import { Review } from 'src/app/models/product/Review';
 import { ReviewService } from 'src/app/services/product/review.service';
 import { CartService } from 'src/app/services/customer/cart.service';
+import { User } from 'src/app/models/User';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 const Swal = require('sweetalert2');
 
 @Component({
@@ -15,6 +17,7 @@ const Swal = require('sweetalert2');
 export class ProductDetailsComponent implements OnInit {
 
   private product:Product;
+  private currentUser:User;
   private review:Review = {
     description:'',
     title:'',
@@ -27,9 +30,12 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private cartService:CartService,
     private productService:ProductService,
      private route:ActivatedRoute,
-     private reviewService:ReviewService) { }
+     private reviewService:ReviewService,
+     private authenticationService:AuthenticationService) { }
 
   ngOnInit() {
+    this.authenticationService.getCurrentUser().subscribe(user=>
+      this.currentUser=user);
     this.productId=Number.parseFloat(this.route.snapshot.paramMap.get("product"));
     this.productService.getProductById(this.productId).subscribe(product=>{
       console.log(product)
