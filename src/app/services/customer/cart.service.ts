@@ -30,6 +30,7 @@ export class CartService {
   }
   //Anonym Cart
   public addProductToAnonymCart(productId:number) {
+    
     return this.http.put(this.cart_service_uri + "/AddProduct/" + productId, null, {
       headers: new HttpHeaders().set('CartToken', localStorage.getItem("CartToken")),
       responseType: 'text'

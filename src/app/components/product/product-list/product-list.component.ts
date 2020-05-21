@@ -144,11 +144,21 @@ export class ProductListComponent implements OnInit {
         }
         //If the user is logged in, we just add the product to the cart.
         else {
+          console.log("casgs")
           this.authtenticationService.getCurrentUser().subscribe(current_user=>{
             this.cartService.getCartByCustomerUsername(current_user.username).subscribe(cart=>{
-              console.log("fe "+cart.id )
+              if (cart==null){
+              console.log("ascas")
+              this.cartService.createCartForCustomer(current_user.username).subscribe(newCart=>{
+                this.cartService.addProductToCart(newCart.id,productId).subscribe(resp=>{
+                  console.log("Add product for loged in user "+newCart.id);
+               
+                })
+              });}
+              else
               this.cartService.addProductToCart(cart.id,productId).subscribe(resp=>{
                 console.log("Add product for loged in user "+resp);
+             
               })
             })
           })
