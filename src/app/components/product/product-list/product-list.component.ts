@@ -146,6 +146,7 @@ export class ProductListComponent implements OnInit {
         else {
           this.authtenticationService.getCurrentUser().subscribe(current_user=>{
             this.cartService.getCartByCustomerUsername(current_user.username).subscribe(cart=>{
+              console.log("fe "+cart.id )
               this.cartService.addProductToCart(cart.id,productId).subscribe(resp=>{
                 console.log("Add product for loged in user "+resp);
               })
