@@ -30,7 +30,7 @@ An online shopping app that lets users navigate through products in different de
 
 * Logged-in users can add review on any product.
 
-* Anonymous cart: When you are navigating the app without being logged in and you add a product to your cart, a jwt-token containing the id of your newly created cart will be stored in your browser's application scope and after logging-in you will have your customer-id updated in the cart that you had created with all the products in it.
+* Anonymous cart: When you are navigating through the app without being logged in and you add a product to your cart, a jwt-token containing the id of your newly created cart will be stored in your browser's application scope and after logging-in you will have your customer-id updated in the cart that you had created with all the products in it.
 
   
 
@@ -87,8 +87,8 @@ An online shopping app that lets users navigate through products in different de
 First you have to clone the app. Go to your projects's folder or create one and run the following commands:
 
 ``` bash
-$ git clone https://github.com/MootezElj/my-boutique-angular-with-spring-microservices.git
-$ cd myboutique-angular8
+$ git clone https://github.com/MootezElj/my-boutique-angular-spring-microservice.git
+$ cd my-boutique-angular-spring-microservice
 ```
 
 #### <a name="back-end-environment-setup"></a> I. Back-End environment setup:
@@ -118,7 +118,7 @@ for me the root  user I have no password if you have password just add ``` -p yo
 
 > ###### Important ! 
 >
-> Make sure you are in the main folder (**my-boutique-angular-with-spring-microservices**) when logging-in. running the following scripts in the wrong location will make errors. 
+> Make sure you are in the main folder (**my-boutique-angular-spring-microservice**) when logging-in. running the following scripts in the wrong location will make errors. 
 
 
 
