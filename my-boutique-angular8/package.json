@@ -23,7 +23,7 @@
     "emailjs": "^2.2.0",
     "emailjs-com": "^2.4.1",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mkdirp": "^1.0.3",
     "ng-simple-slideshow": "^1.2.9",
     "ngx-spinner": "^9.0.1",
