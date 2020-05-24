@@ -2,7 +2,15 @@
 
 My-boutique is an angular 8 app, it is the front-end of the **[my-boutique-microservice](https://github.com/MootezElj/my-boutique-microservice-back-end)** spring-boot app based on **Nebrass Lamouchi**'s book "**[Playing with Java Microservices on Kubernetes and OpenShift](https://leanpub.com/playing-with-java-microservices-on-k8s-and-ocp)**". In this documentation we will run the microservices and the angular application.
 
+
+
+<img src="https://media.giphy.com/media/ZeXrnlOFKIxOvMXDZe/giphy.gif"     alt="Markdown Monster icon"   width=90%  style="float: left; margin: auto;" />
+
+
+
 ------
+<img src="https://i.postimg.cc/YCxP4VVG/Home1.png"     alt="Markdown Monster icon"     style="float: left; margin-right: 10px;" />
+
 
 ### <a name="features"></a> Features:
 
@@ -40,7 +48,7 @@ An online shopping app that lets users navigate through products in different de
 
 * ##### [Requirements](#requirements)
 
-* ##### [Installation](#Installation)
+* ##### [Installation](#installation)
 
   ##### [I. Back-End environment setup:](#back-end-environment-setup)
 
