@@ -204,6 +204,6 @@ The app should run in your default browser and you are now able to use it.
 
 ------
 
-### <a name="License"></a>License:
+### <a name="license"></a>License:
 
 This code (images included) is open-source, you may use it as you like but I'm not responsible of the way you use the code.
