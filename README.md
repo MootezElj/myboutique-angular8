@@ -1,8 +1,6 @@
 # My-Boutique-Angular 1.0
 
-My-boutique is an angular 8 app, it is the front-end of the [my-boutique-microservice](https://github.com/MootezElj/my-boutique-microservice-back-end) spring-boot app based on Nebras Lammouchi's book Playing with ... . In this documentation we will run the microservices and the angular application. microservice repo [here]().
-
-
+My-boutique is an angular 8 app, it is the front-end of the [my-boutique-microservice](https://github.com/MootezElj/my-boutique-microservice-back-end) spring-boot app based on Nebrass Lamouchi's book "[Playing with Java Microservices on Kubernetes and OpenShift](https://leanpub.com/playing-with-java-microservices-on-k8s-and-ocp)". In this documentation we will run the microservices and the angular application. microservice repo [here]().
 
 ### <a name="features"></a> Features:
 
