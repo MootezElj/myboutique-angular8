@@ -207,12 +207,8 @@ The app should run in your default browser and you are now able to use it.
 ### <a name="important"></a>Important notes:
 
 1. In this app I focused on implementing the functionalities of the back-end. Since I'm not familiar with security in angular apps I have to note that **There are probably security vulnerabilities** that can be used by people to steal informations from users or hack the application if deployed. So be careful on how to use the app.
+2. There is another repository where I used Docker and Kubernetes to run the microservices ([repo_link](https://github.com/MootezElj/my-boutique-kubernetes)). Since this documentation is aimed at the front-end app, I just wanted to keep things as simple as possible.
 
-2. There is another repository where I used Docker and Kubernetes to run the microservices ([repo_link]()). Since this documentation is aimed at the front-end app, I just wanted to keep things as simple as I can.
-
-3. I want to re-mention that you have to run the back-end application in order for this application to run.
-
-   
 
 ------
 
