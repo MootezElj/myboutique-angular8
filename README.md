@@ -1,6 +1,8 @@
 # My-Boutique-Angular 1.0
 
-My-boutique is an angular 8 app, it is the front-end of the [my-boutique-microservice](https://github.com/MootezElj/my-boutique-microservice-back-end) spring-boot app based on Nebrass Lamouchi's book "[Playing with Java Microservices on Kubernetes and OpenShift](https://leanpub.com/playing-with-java-microservices-on-k8s-and-ocp)". In this documentation we will run the microservices and the angular application. microservice repo [here]().
+My-boutique is an angular 8 app, it is the front-end of the **[my-boutique-microservice](https://github.com/MootezElj/my-boutique-microservice-back-end)** spring-boot app based on **Nebrass Lamouchi**'s book "**[Playing with Java Microservices on Kubernetes and OpenShift](https://leanpub.com/playing-with-java-microservices-on-k8s-and-ocp)**". In this documentation we will run the microservices and the angular application.
+
+------
 
 ### <a name="features"></a> Features:
 
@@ -42,9 +44,9 @@ An online shopping app that lets users navigate through products in different de
 
   ##### [I. Back-End environment setup:](#back-end-environment-setup)
 
-  ###### 		[1. Create database schema and insert data](#db-setup)
+  ###### 			[1. Create database schema and insert data](#db-setup)
 
-  ###### 		[2. Run microservices](#run-ms)
+  ###### 			[2. Run microservices](#run-ms)
 
   ##### [II. Run angular app](#run-angular) 
 
@@ -196,7 +198,9 @@ The app should run in your default browser and you are now able to use it.
 
 1. In this app I focused on implementing the functionalities of the back-end. Since I'm not familiar with security in angular apps I have to note that **There are probably security vulnerabilities** that can be used by people to steal informations from users or hack the application if deployed. So be careful on how to use the app.
 
-2. I want to re-mention that you have to run the back-end application in order for this application to run.
+2. There is another repository where I used Docker and Kubernetes to run the microservices ([repo_link]()). Since this documentation is aimed at the front-end app, I just wanted to keep things as simple as I can.
+
+3. I want to re-mention that you have to run the back-end application in order for this application to run.
 
    
 
