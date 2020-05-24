@@ -6,50 +6,94 @@
 
 # My-Boutique-Angular 1.0
 
-My-boutique is an angular 8 app, it is the front-end of the [my-boutique-microservice](https://github.com/MootezElj/my-boutique-microservice-back-end) spring-boot app based on Nebras Lammouchi's book Playing with ... . In this documentation we will run the microservices then the angular application. Check this [link]() for the microservice repo.
+My-boutique is an angular 8 app, it is the front-end of the [my-boutique-microservice](https://github.com/MootezElj/my-boutique-microservice-back-end) spring-boot app based on Nebras Lammouchi's book Playing with ... . In this documentation we will run the microservices and the angular application. microservice repo [here]().
 
-### Features: 
+------
 
-This is an online shopping app that lets users navigate through products in different departments give reviews and add them to their carts before ordering them and updating their billing information.
+### Features:
 
-#### Covered functionalities:
+An online shopping app that lets users navigate through products in different departments, give reviews and add them to their carts before ordering them and updating their billing information.
+
+### Covered functionalities:
 
 * Users login/register.
+
 * Secure route navigation (via role based routing).
+
 * Huge range of existing departments, categories and products lets you have a clear idea of the application's aspects.
+
 * Users can add products to their carts and update their billing informations (Country, Address, Postal code ...).
+
 * Logged-in users can add review on any product.
+
 * Anonymous cart: When you are navigating the app without being logged in and you add a product to your cart, a jwt-token containing the id of your newly created cart will be stored in your browser's application scope and after logging-in you will have your customer-id updated in the cart that you had created with all the products in it.
 
-#### 
+  
 
 > #### Note
 >
 > Payment procedure is not included in the app. which means the client only gets to update his billing information without the actual payment being processed.
 
-### Requirements (For this app only)
 
-* Java 8 (For the back-end app).
+
+### Table of contents
+
+------
+
+* ##### Features
+
+* ##### Covered functionalities
+
+* ##### Requirements
+
+* ##### Installation
+
+  ##### I. Back-End environment setup:
+
+  ###### 	1. Environment setup
+
+  ###### 	2. Run microservices
+
+  ##### II. Run angular app 
+
+* ##### Important notes
+
+* ##### License
+
+------
+
+
+
+### Requirements
+
+* Java 8.
+
 * Mysql.
+
 * Node.Js (*10.x or 12.x which I'm using* )
+
 * Git.
+
+  
+
+------
 
 ### Installation
 
-First you have to clone the app. Go to your projects folder or create one and run the following commands:
+First you have to clone the app. Go to your projects's folder or create one and run the following commands:
 
 ``` bash
-$ git clone https://github.com/MootezElj/myboutique-angular8.git
+$ git clone https://github.com/MootezElj/my-boutique-angular-with-spring-microservices.git
 $ cd myboutique-angular8
 ```
 
-##### 1. Environment setup:
+#### I. Back-End environment setup:
 
-We need to make our environment suitable for running our application. I wont show you how to install java or Wamp (you can check google since it's not our goal).
+We need to make our environment suitable for running our application. I wont show you how to install java or Mysql (you can check google and it's not our goal for this project).
 
 However since we have an angular application I decided to integrate some fundamental parts of installations.
 
-##### Create data base schema and insert data:
+##### 1. Create database schema and insert data:
 
 We are going to create the following databases with all the data needed to test the app:
 
@@ -96,7 +140,7 @@ For the config and discovery service run them in the following order:
    ```
 
    Wait for the config server to finish the execution so that the discovery-service can fetch its config. Then run this:
-   
+
 2. ``` bash
    $ java -jar my-boutique-microservices/discovery-service-1.0.jar
    ```
@@ -124,7 +168,7 @@ Open your browser and navigate to http://localhost:8761/, you should see all the
 
 > If there is a missing service you have surely made a mistake running or downloading the service.
 
-##### 3. Run angular app:
+#### II. Run angular app:
 
 The next step is to install angular command line interface.
 
@@ -154,12 +198,17 @@ The app should run in your default browser and you are now able to use it.
 
 
 
+------
+
 ### Important notes:
 
 1. In this app I focused on implementing the functionalities of the back-end. Since I'm not familiar with security in angular apps I have to note that **There are probably security vulnerabilities** that can be used by people to steal informations from users or hack the application if deployed. So be careful on how to use the app.
+
 2. I want to re-mention that you have to run the back-end application in order for this application to run.
 
+   
 
+------
 
 ### License:
 
