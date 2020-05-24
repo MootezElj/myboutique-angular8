@@ -34,15 +34,15 @@ An online shopping app that lets users navigate through products in different de
 
 ------
 
-* ##### [Features](#Features)
+* ##### [Features](#features)
 
-* ##### [Covered functionalities](#Covered-functionalities)
+* ##### [Covered functionalities](#covered-functionalities)
 
-* ##### [Requirements](#Requirements)
+* ##### [Requirements](#requirements)
 
 * ##### [Installation](#Installation)
 
-  ##### [I. Back-End environment setup:](#Back-End-environment-setup)
+  ##### [I. Back-End environment setup:](#back-end-environment-setup)
 
   ###### 		[1. Create database schema and insert data](#db-setup)
 
@@ -52,7 +52,7 @@ An online shopping app that lets users navigate through products in different de
 
 * ##### [Important notes](#important)
 
-* ##### [License](#License)
+* ##### [License](#license)
 
 ------
 
