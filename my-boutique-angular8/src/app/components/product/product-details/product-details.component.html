@@ -1,0 +1,107 @@
+<div class="row content" style="position: relative;top: -1.3vh;">
+    <div class="col-md-5" style="background-color: white;">
+        <div class="slide">
+            <img width="100%" src="../../../../assets/images/product/product-list/{{product.image1}}" alt="">
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <div style="margin-top: 16vh;margin-left: 4vh;
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;">
+            <div class="lev-2-header">{{product.category.name}}</div> <span *ngIf="product.discount>0" class="badge"
+                style="background-color: red;padding: 1vh;">- %{{product.discount}}</span>
+                <span class="badge"
+                    style="background-color: rgb(51, 51, 51);padding: 1vh;margin-left: 1%;">  {{product.status}} </span>
+                    <span class="product-description" *ngIf="product.status!='AVAILABLE'"> (You cannot add this product to your cart)</span>
+           
+            <h1>{{product.name}}</h1>
+            <p class="old-price" *ngIf="product.discount>0">${{product.priceBeforeDiscount}}</p>
+            <p class="price">${{product.price}}</p>
+            <p class="product-description">{{product.description}}</p>
+            <form class="form">
+                <select class="select-feature" name="" id="">
+                    <option value="">size: xl</option>
+                    <option value="">size: xxl</option>
+                    <option value="">size: x</option>
+                    <option value="">size: s</option>
+                </select>
+
+
+                <select class="select-feature" name="" id="">
+                    <option value="">color: black</option>
+                    <option value="">color: red</option>
+                    <option value="">color: blue</option>
+                </select>
+
+                <br>
+                
+                <button   [disabled]="product.status!='AVAILABLE'" (click)="addProductToCart(product.id)" class="custom-primary-btn">ADD TO CART</button>
+                 </form>
+            <div class="col-md-8">
+                <div class="review-header">
+                    <h3><i class="fas fa-comments"></i>
+                        Check others's feedback on this product.
+                    </h3>
+                </div>
+                <div class="review-list col-md-11">
+                    <div class="review-item" *ngFor="let review of reviews">
+                        <div class="block_container">
+                            <div class="bloc1 col-md-6">
+                                {{review.title}}
+                            </div>
+                            <div class="bloc2">
+
+
+
+                            </div>
+                            <div class="bloc3 col-md-6">
+
+                                <div class="col-md-1" *ngIf="review.rating >= 1"><i class="far fa-star"></i></div>
+                                <div class="col-md-1" *ngIf="review.rating >= 2"><i class="far fa-star"></i></div>
+                                <div class="col-md-1" *ngIf="review.rating >= 3"><i class="far fa-star"></i></div>
+                                <div class="col-md-1" *ngIf="review.rating >= 4"><i class="far fa-star"></i></div>
+                                <div class="col-md-1" *ngIf="review.rating >= 5"><i class="far fa-star"></i></div>
+
+                            </div>
+                        </div>
+                        <p class="review-description">{{review.description}}</p>
+                    </div>
+                    <div *ngIf="currentUser">
+                        <div class="review-header">
+                            <h3><i class="fas fa-comment-dots"></i>
+                                What about you ?
+                            </h3>
+                        </div>
+                        <div class="review-form row">
+                            <form style="width: 100%;" class="">
+                                <div class="form-group col-md-6">
+                                    <input [(ngModel)]="review.title" name="title" type="text"
+                                        placeholder="Review title" class="form-control">
+                                </div>
+
+                                <div class="slidecontainer col-md-4">
+                                    <input [(ngModel)]="review.rating" name="rating" type="range" min="1" max="5"
+                                        step="1" class="slider" id="myRange">
+                                    <div style="color: teal;">rating: {{review.rating}}</div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <textarea placeholder="Review description" name="description"
+                                        [(ngModel)]="review.description" class="form-control"></textarea>
+                                </div>
+
+
+
+                                <button (click)="addReview()" class="review-btn col-md-3"><i class="fas fa-check"></i>
+                                    Confirm</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="review-header" *ngIf="!currentUser">
+                        <h4> <a href="/Login"><i class="fas fa-sign-in-alt"></i> Login </a> to give your feedback on this product.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

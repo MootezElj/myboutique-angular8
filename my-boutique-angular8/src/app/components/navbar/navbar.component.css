@@ -1,0 +1,9 @@
+.disconnect-button{
+    color: black;
+    text-transform: uppercase;
+}
+
+.cart-badge{
+    background-color: gainsboro;
+    color: black;
+}

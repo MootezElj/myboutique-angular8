@@ -1,0 +1,74 @@
+.home-container{
+    width: 80%;
+    margin:auto;
+}
+
+
+.block_container
+{
+    text-align:left;
+    margin-bottom: 1%;
+}
+.bloc1
+{
+    display:inline;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.5vh;
+}
+
+.bloc2{
+    position: relative;
+    top: -0.2vh;
+    margin-left: 2vh;
+    display:inline;
+    font-size: 1.7vh;
+    color: #525252;
+    
+}
+
+.main-container {
+    
+    padding: 1%;
+    
+}
+
+.section{
+    border-top: 1px 1px solid black;
+    margin: auto;
+    margin-bottom: 10%;
+    margin-top: 5%;
+    box-shadow: 2px 2px  4px rgb(182, 182, 182);
+    padding: 1%;
+}
+
+.section-header{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+.product-name{
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 100%;
+    font-weight: bold;
+    color: rgb(134, 134, 134);
+   margin-bottom: 6%;
+}
+
+.product-image{
+    display: block;
+    object-fit: cover;
+}
+
+.products{
+   margin-bottom: 2%;   
+}
+
+.product-card{
+
+    text-align: center;
+    
+    background-color: white;
+}
+
+
