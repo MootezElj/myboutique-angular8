@@ -8,9 +8,9 @@
 
 My-boutique is an angular 8 app, it is the front-end of the [my-boutique-microservice](https://github.com/MootezElj/my-boutique-microservice-back-end) spring-boot app based on Nebras Lammouchi's book Playing with ... . In this documentation we will run the microservices and the angular application. microservice repo [here]().
 
-------
 
-### Features:
+
+### <a name="Features"></a> Features:
 
 An online shopping app that lets users navigate through products in different departments, give reviews and add them to their carts before ordering them and updating their billing information.
 
@@ -40,7 +40,7 @@ An online shopping app that lets users navigate through products in different de
 
 ------
 
-* ##### Features
+* [Features](#Features)
 
 * ##### Covered functionalities
 
