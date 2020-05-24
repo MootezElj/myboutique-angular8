@@ -1,9 +1,3 @@
-
-
-
-
-
-
 # My-Boutique-Angular 1.0
 
 My-boutique is an angular 8 app, it is the front-end of the [my-boutique-microservice](https://github.com/MootezElj/my-boutique-microservice-back-end) spring-boot app based on Nebras Lammouchi's book Playing with ... . In this documentation we will run the microservices and the angular application. microservice repo [here]().
@@ -14,7 +8,7 @@ My-boutique is an angular 8 app, it is the front-end of the [my-boutique-microse
 
 An online shopping app that lets users navigate through products in different departments, give reviews and add them to their carts before ordering them and updating their billing information.
 
-### Covered functionalities:
+### <a name="Covered-functionalities"></a> Covered functionalities:
 
 * Users login/register.
 
@@ -40,31 +34,31 @@ An online shopping app that lets users navigate through products in different de
 
 ------
 
-* [Features](#Features)
+* ##### [Features](#Features)
 
-* ##### Covered functionalities
+* ##### [Covered functionalities](#Covered-functionalities)
 
-* ##### Requirements
+* ##### [Requirements](#Requirements)
 
-* ##### Installation
+* ##### [Installation](#Installation)
 
-  ##### I. Back-End environment setup:
+  ##### [I. Back-End environment setup:](#Back-End-environment-setup)
 
-  ###### 	1. Environment setup
+  ###### 		[1. Create database schema and insert data](#db-setup)
 
-  ###### 	2. Run microservices
+  ###### 		[2. Run microservices](#run-ms)
 
-  ##### II. Run angular app 
+  ##### [II. Run angular app](#run-angular) 
 
-* ##### Important notes
+* ##### [Important notes](#important)
 
-* ##### License
+* ##### [License](#License)
 
 ------
 
 
 
-### Requirements
+### <a name="Requirements"></a>Requirements
 
 * Java 8.
 
@@ -78,7 +72,7 @@ An online shopping app that lets users navigate through products in different de
 
 ------
 
-### Installation
+### <a name="Installation"></a> Installation
 
 First you have to clone the app. Go to your projects's folder or create one and run the following commands:
 
@@ -87,13 +81,13 @@ $ git clone https://github.com/MootezElj/my-boutique-angular-with-spring-microse
 $ cd myboutique-angular8
 ```
 
-#### I. Back-End environment setup:
+#### <a name="Back-End-environment-setup"></a> I. Back-End environment setup:
 
 We need to make our environment suitable for running our application. I wont show you how to install java or Mysql (you can check google and it's not our goal for this project).
 
 However since we have an angular application I decided to integrate some fundamental parts of installations.
 
-##### 1. Create database schema and insert data:
+##### <a name="db-setup"></a> 1. Create database schema and insert data:
 
 We are going to create the following databases with all the data needed to test the app:
 
@@ -129,7 +123,7 @@ After successfully logging we must execute the sql scripts for each database (4)
 
 
 
-##### 2. Run microservices:
+##### <a name="run-ms"></a>2. Run microservices:
 
 We have to run the spring microservices in order to make our operations on the database with our application.
 
@@ -168,7 +162,7 @@ Open your browser and navigate to http://localhost:8761/, you should see all the
 
 > If there is a missing service you have surely made a mistake running or downloading the service.
 
-#### II. Run angular app:
+#### <a name="run-angular"></a>II. Run angular app:
 
 The next step is to install angular command line interface.
 
@@ -200,7 +194,7 @@ The app should run in your default browser and you are now able to use it.
 
 ------
 
-### Important notes:
+### <a name="important"></a>Important notes:
 
 1. In this app I focused on implementing the functionalities of the back-end. Since I'm not familiar with security in angular apps I have to note that **There are probably security vulnerabilities** that can be used by people to steal informations from users or hack the application if deployed. So be careful on how to use the app.
 
@@ -210,7 +204,7 @@ The app should run in your default browser and you are now able to use it.
 
 ------
 
-### License:
+### <a name="License"></a>License:
 
 This code (images included) is open-source, you may use it as you like but I'm not responsible of the way you use the code.
 
