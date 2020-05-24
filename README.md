@@ -4,11 +4,11 @@ My-boutique is an angular 8 app, it is the front-end of the [my-boutique-microse
 
 
 
-### <a name="Features"></a> Features:
+### <a name="features"></a> Features:
 
 An online shopping app that lets users navigate through products in different departments, give reviews and add them to their carts before ordering them and updating their billing information.
 
-### <a name="Covered-functionalities"></a> Covered functionalities:
+### <a name="covered-functionalities"></a> Covered functionalities:
 
 * Users login/register.
 
@@ -58,7 +58,7 @@ An online shopping app that lets users navigate through products in different de
 
 
 
-### <a name="Requirements"></a>Requirements
+### <a name="requirements"></a>Requirements
 
 * Java 8.
 
@@ -72,7 +72,7 @@ An online shopping app that lets users navigate through products in different de
 
 ------
 
-### <a name="Installation"></a> Installation
+### <a name="installation"></a> Installation
 
 First you have to clone the app. Go to your projects's folder or create one and run the following commands:
 
@@ -81,7 +81,7 @@ $ git clone https://github.com/MootezElj/my-boutique-angular-with-spring-microse
 $ cd myboutique-angular8
 ```
 
-#### <a name="Back-End-environment-setup"></a> I. Back-End environment setup:
+#### <a name="back-end-environment-setup"></a> I. Back-End environment setup:
 
 We need to make our environment suitable for running our application. I wont show you how to install java or Mysql (you can check google and it's not our goal for this project).
 
@@ -207,12 +207,3 @@ The app should run in your default browser and you are now able to use it.
 ### <a name="License"></a>License:
 
 This code (images included) is open-source, you may use it as you like but I'm not responsible of the way you use the code.
-
-
-
-
-
-
-
-
-
