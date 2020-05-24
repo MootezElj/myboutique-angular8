@@ -1,0 +1,63 @@
+.header-image{
+    width: 100%;
+    height: 17vh;
+    object-fit: cover;
+    object-position: 0 15%;
+
+}
+.register-header-title{
+    text-align: center;
+    position: relative;
+    top: -12vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 3vh;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+}
+
+.custom-input{
+    border-radius: 0;
+    border-color: #eeeeee;
+    height: 4.5vh;
+}
+
+
+
+.custom-style1-select{
+    border: 1px solid gainsboro;
+    -webkit-appearance: menulist-button;
+    height: 3.7vh;
+    font-size: 130%;
+    width: 100%;
+    margin-top: 4%;
+}
+
+.payment-method{
+    border: 1px solid gainsboro;
+    margin-top: 1%;
+    padding: 0.5%;
+}
+
+.payment-method-img{
+    height: 8vh;
+}
+
+.payment-method-radio{
+    margin-top: 6%;
+}
+
+.order-information{
+    padding: 1%;
+    padding-left: 4%;
+    border: 2px solid gainsboro;
+    margin-top: 4%;
+    box-shadow: 1px 1px 1px gray ;
+}
+
+.products{
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 130%;
+    color: slategrey;
+}
