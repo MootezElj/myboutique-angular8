@@ -87,8 +87,8 @@ An online shopping app that lets users navigate through products in different de
 First you have to clone the app. Go to your projects's folder or create one and run the following commands:
 
 ``` bash
-$ git clone https://github.com/MootezElj/my-boutique-angular-spring-microservice.git
-$ cd my-boutique-angular-spring-microservice
+$ git clone https://github.com/MootezElj/my-boutique1.0-angular-with-spring-microservices.git
+$ cd my-boutique1.0-angular-with-spring-microservices
 ```
 
 #### <a name="back-end-environment-setup"></a> I. Back-End environment setup:
@@ -118,7 +118,7 @@ for me the root  user I have no password if you have password just add ``` -p yo
 
 > ###### Important ! 
 >
-> Make sure you are in the main folder (**my-boutique-angular-spring-microservice**) when logging-in. running the following scripts in the wrong location will make errors. 
+> Make sure you are in the main folder (**my-boutique1.0-angular-with-spring-microservices**) when logging-in. running the following scripts in the wrong location will make errors. 
 
 
 
