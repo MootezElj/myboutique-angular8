@@ -249,6 +249,12 @@ The app should run in your default browser and you are now able to use it.
 
 
 
+> #### Using the app:
+>
+> To use the app you can either login with the admin user (username:admin, pass:admin123) or create a new user.
+
+
+
 ------
 
 ### <a name="important"></a>Important notes:
