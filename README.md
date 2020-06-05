@@ -183,7 +183,7 @@ $ npm install -g @angular/cli
 Then navigate to the angular app:
 
 ```  bash
-$ cd ../myboutique-angular8
+$ cd myboutique-angular8
 ```
 
 Then just locally update the project's dependencies using this command:
