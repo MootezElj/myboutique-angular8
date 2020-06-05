@@ -260,13 +260,7 @@ The app should run in your default browser and you are now able to use it.
 
 ### <a name="credits"></a>Credits:
 
-I want to thank my father and all of those who helped me on this project.
-
-I want to give credits to [Nebras Lammouchi](https://blog.nebrass.fr/about/) who was the main developer of the back-end app and I just had to follow and understand his [book](https://leanpub.com/playing-with-java-microservices-on-k8s-and-ocp).
-
-
-
-
+The back-end used by our angular application is an altered version of the main [app](https://github.com/MootezElj/my-boutique-kubernetes) (A lot of technical functionalities are not implemented in this app, I wanted to keep things simple ) that was developed after following and understanding [Nebras Lammouchi](https://blog.nebrass.fr/about/)'s book [Playing with Java Microservices on Kubernetes and OpenShift](https://leanpub.com/playing-with-java-microservices-on-k8s-and-ocp). So I just thought that he must be credited for his work.
 
 ### <a name="license"></a>License:
 
