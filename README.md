@@ -127,7 +127,7 @@ After successfully logging we must execute the sql scripts for each database (4)
 ```mysql
 > source sql/product-service-db.sql
 > source sql/customer-service-db.sql
-> source sql/product-service-db.sql
+> source sql/order-service-db.sql
 > source sql/jwt-service-db.sql
 ```
 
