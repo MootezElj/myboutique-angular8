@@ -63,7 +63,7 @@ An online shopping app that lets users navigate through products in different de
 
 * ##### [Important notes](#important)
 
-* ###### [Important notes](#credits)
+* ###### [Credits](#credits)
 
 * ##### [License](#license)
 
