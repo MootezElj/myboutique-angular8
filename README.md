@@ -7,6 +7,7 @@ My-boutique is an angular 8 app, it is the front-end of the **[my-boutique-micro
 ###### Home Page
 
 ------
+
 <img src="https://i.postimg.cc/dV1W1BMw/Home1.png"     alt="Markdown Monster icon"     style="float: left; margin-right: 10px;" />
 
 ###### Product List
@@ -62,6 +63,8 @@ An online shopping app that lets users navigate through products in different de
 
 * ##### [Important notes](#important)
 
+* ###### [Important notes](#credits)
+
 * ##### [License](#license)
 
 ------
@@ -72,7 +75,7 @@ An online shopping app that lets users navigate through products in different de
 
 * Java 8.
 
-* Mysql.
+* Mysql server (I'm using v8) and mysql-connector-java8.
 
 * Node.Js (*10.x or 12.x which I'm using* )
 
@@ -106,19 +109,47 @@ We are going to create the following databases with all the data needed to test 
 * product-service-db
 * customer-service-db
 
-Login to mysql with the root profile:
+
+
+Since we have a deployed .jar microservices that are configured to use mysql databases with the root account and without a password, we have to make sur that you don't have a password for your root account.
+
+Try login-in to mysql with the root profile and without password:
 
 ```bash
 $ mysql -u root
 ```
 
-for me the root  user I have no password if you have password just add ``` -p yourPassword``` to the previous command and replace 'yourPassword' with your password.
+-----
+
+If you get an error run  this:
+
+``` bash
+$ mysql -u root -p
+```
+
+type your password and hit enter.
+
+after logging in to mysql run the following:
+
+```mysql
+> UPDATE mysql.user SET authentication_string=null WHERE User='root';
+> FLUSH PRIVILEGES;
+> exit;
+```
+
+After removing the root password re-login to mysql running the command:
+
+``` bash
+$ mysql -u root
+```
+
+----
 
 
 
 > ###### Important ! 
 >
-> Make sure you are in the main folder (**my-boutique1.0-angular-with-spring-microservices**) when logging-in. running the following scripts in the wrong location will make errors. 
+> Before continuing make sure you are in the main folder (**my-boutique1.0-angular-with-spring-microservices**) when logging-in. running the following scripts in the wrong location will make errors. 
 
 
 
@@ -131,11 +162,27 @@ After successfully logging we must execute the sql scripts for each database (4)
 > source sql/jwt-service-db.sql
 ```
 
+``` mysql
+> show databases;
+```
+
+You must notice the 4 databases that we just created, if not you made a mistake running the scripts, or you are in the wrong path.
+
+If you had successfully created the databases exit mysql:
+
+```mysql
+> exit;
+```
+
 
 
 ##### <a name="run-ms"></a>2. Run microservices:
 
 We have to run the spring microservices in order to make our operations on the database with our application.
+
+> ###### Important ! 
+>
+> Before continuing make sure you are in the main folder (**my-boutique1.0-angular-with-spring-microservices**) . running the following scripts in the wrong location will make errors. 
 
 For the config and discovery service run them in the following order:
 
@@ -207,11 +254,29 @@ The app should run in your default browser and you are now able to use it.
 ### <a name="important"></a>Important notes:
 
 1. In this app I focused on implementing the functionalities of the back-end. Since I'm not familiar with security in angular apps I have to note that **There are probably security vulnerabilities** that can be used by people to steal informations from users or hack the application if deployed. So be careful on how to use the app.
-2. There is another repository where I used Docker and Kubernetes to run the microservices ([repo_link](https://github.com/MootezElj/my-boutique-kubernetes)). Since this documentation is aimed at the front-end app, I just wanted to keep things as simple as possible.
-
+2. There is another repository where I used Docker and kubernetes to run the microservices ([repo_link](https://github.com/MootezElj/my-boutique-kubernetes)). Since this documentation is aimed at the front-end app, I just wanted to keep things as simple as possible.
 
 ------
+
+### <a name="credits"></a>Credits:
+
+I want to thank my father and all of those who helped me on this project.
+
+I want to give credits to [Nebras Lammouchi](https://blog.nebrass.fr/about/) who was the main developer of the back-end app and I just had to follow and understand his [book](https://leanpub.com/playing-with-java-microservices-on-k8s-and-ocp).
+
+
+
+
 
 ### <a name="license"></a>License:
 
 This code (images included) is open-source, you may use it as you like but I'm not responsible of the way you use the code.
+
+
+
+
+
+
+
+
+
